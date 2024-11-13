@@ -43,6 +43,16 @@ namespace StarterAssets
 		{
 			SprintInput(value.isPressed);
 		}
+		
+		public void OnShoot(InputValue value)
+		{
+			//SprintInput(value.isPressed);
+		}
+		
+		public void OnVacuum(InputValue value)
+		{
+			//SprintInput(value.isPressed);
+		}
 #endif
 
 
