@@ -2,7 +2,7 @@
 
 using UnityEngine;
 using UnityEngine.AI;
-public enum SlimeState { Idle,Walk,Jump,Attack,Damage}
+public enum SlimeState { Idle,Walk,Jump,Attack,Damage, Chase}
 public class SlimeAI : MonoBehaviour
 {
 
@@ -21,7 +21,7 @@ public class SlimeAI : MonoBehaviour
     private Material faceMaterial;
     private Vector3 originPos;
 
-    public enum WalkType { Patroll ,ToOrigin }
+    public enum WalkType { Patroll ,ToOrigin, ToPlayer }
     private WalkType walkType;
 
     void Start()
@@ -138,7 +138,12 @@ public class SlimeAI : MonoBehaviour
 
                 //Debug.Log("Take Damage");
                 break;
-       
+            
+            
+          //  case SlimeState.Chase:
+
+
+          break;
         }
 
     }
