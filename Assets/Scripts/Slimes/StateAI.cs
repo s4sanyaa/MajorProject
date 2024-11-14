@@ -1,28 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class StateAI : MonoBehaviour
 {
-    
     public GameObject mainSlime;
+    private GameObject player;
     
-    void Idle()
+    [SerializeField] private float chaseDistance;
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+    private void Update()
+    {
+        if (Vector3.Distance(transform.position, player.transform.position) < chaseDistance)
+        {
+            ChangeStateTo(SlimeState.Chase);
+        }
+        else
+        {
+            Idle();
+        }
+    }
+    private void Idle()
     {
         LookAtCamera();
-        mainSlime.GetComponent<EnemyAi>().CancelGoNextDestination();
-        ChangeStateTo(SlimeAnimationState.Idle);
+        mainSlime.GetComponent<SlimeAI>().CancelGoNextDestination();
+        ChangeStateTo(SlimeState.Idle);
     }
-    public void ChangeStateTo(SlimeAnimationState state)
+    public void ChangeStateTo(SlimeState state)
     {
         if (mainSlime == null) return;    
-        if (state == mainSlime.GetComponent<EnemyAi>().currentState) return;
-
-        mainSlime.GetComponent<EnemyAi>().currentState = state ;
+        if (state == mainSlime.GetComponent<SlimeAI>().currentState) return;
+        mainSlime.GetComponent<SlimeAI>().currentState = state ;
     }
-    void LookAtCamera()
+    private void LookAtCamera()
     {
-     //   mainSlime.transform.rotation = Quaternion.Euler(new Vector3(mainSlime.transform.rotation.x, cam.transform.rotation.y, mainSlime.transform.rotation.z));   
+        //mainSlime.transform.rotation = Quaternion.Euler(new Vector3(mainSlime.transform.rotation.x, cam.transform.rotation.y, mainSlime.transform.rotation.z));   
     }
 }
-

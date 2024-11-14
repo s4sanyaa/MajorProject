@@ -2,10 +2,11 @@
 
 using UnityEngine;
 using UnityEngine.AI;
-public enum SlimeState { Idle,Walk,Jump,Attack,Damage}
+public enum SlimeState { Idle, Walk, Jump, Attack, Damage, Chase }
 public class SlimeAI : MonoBehaviour
 {
-
+    private Transform player;
+    
     public Face faces;
     public GameObject SmileBody;
     public SlimeState currentState; 
@@ -21,11 +22,12 @@ public class SlimeAI : MonoBehaviour
     private Material faceMaterial;
     private Vector3 originPos;
 
-    public enum WalkType { Patroll ,ToOrigin }
+    public enum WalkType { Patroll, ToOrigin }
     private WalkType walkType;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         originPos = transform.position;
         faceMaterial = SmileBody.GetComponent<Renderer>().materials[1];
         walkType = WalkType.Patroll;
@@ -45,8 +47,6 @@ public class SlimeAI : MonoBehaviour
     }
     void Update()
     {
-        
-
         switch (currentState)
         {
             case SlimeState.Idle:
@@ -110,8 +110,6 @@ public class SlimeAI : MonoBehaviour
                 StopAgent();
                 SetFace(faces.jumpFace);
                 animator.SetTrigger("Jump");
-
-                //Debug.Log("Jumping");
                 break;
 
             case SlimeState.Attack:
@@ -137,6 +135,14 @@ public class SlimeAI : MonoBehaviour
                 SetFace(faces.damageFace);
 
                 //Debug.Log("Take Damage");
+                break;
+            
+            case SlimeState.Chase:
+                agent.isStopped = false;
+                agent.updateRotation = true;
+                agent.SetDestination(player.position);
+                SetFace(faces.WalkFace);
+                animator.SetFloat("Speed", agent.velocity.magnitude);
                 break;
        
         }
