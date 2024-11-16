@@ -139,6 +139,7 @@ public class SlimeAI : MonoBehaviour
             
             case SlimeState.Chase:
                 agent.isStopped = false;
+                
                 agent.updateRotation = true;
                 agent.SetDestination(player.position);
                 SetFace(faces.WalkFace);
