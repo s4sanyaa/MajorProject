@@ -1,10 +1,12 @@
 
 
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 public enum SlimeState { Idle,Walk,Jump,Attack,Damage, Chase}
 public class SlimeAI : MonoBehaviour
 {
+    private Transform player;
 
     public Face faces;
     public GameObject SmileBody;
@@ -29,6 +31,7 @@ public class SlimeAI : MonoBehaviour
         originPos = transform.position;
         faceMaterial = SmileBody.GetComponent<Renderer>().materials[1];
         walkType = WalkType.Patroll;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     public void WalkToNextDestination()
     {
@@ -51,9 +54,22 @@ public class SlimeAI : MonoBehaviour
         {
             case SlimeState.Idle:
                 
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
-                StopAgent();
-                SetFace(faces.Idleface);
+                // if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
+                // StopAgent();
+                // SetFace(faces.Idleface);
+                agent.isStopped = false;
+                agent.updateRotation = true;
+                if (agent.remainingDistance <= agent.stoppingDistance)
+                {
+                    if (Random.Range(0.0f, 100.0f) < 0.1f)
+                    {
+                        agent.SetDestination(new Vector3(transform.position.x + Random.Range(-5f, 5f), 0,
+                            transform.position.z + Random.Range(-5f, 5f)));
+                    }
+                    
+                }
+                SetFace(agent.velocity == Vector3.zero ? faces.Idleface : faces.WalkFace);
+                animator.SetFloat("Speed",agent.velocity.magnitude);
                 break;
 
             case SlimeState.Walk:
@@ -151,9 +167,12 @@ public class SlimeAI : MonoBehaviour
                 
                 agent.updateRotation = true;
                 agent.SetDestination(player.position);
-                SetFace(faces.WalkFace);
+               // SetFace(faces.WalkFace);
+                SetFace(agent.velocity == Vector3.zero ? faces.Idleface : faces.WalkFace);
                 animator.SetFloat("Speed", agent.velocity.magnitude);
                 break;
+            
+           
        
 
         }
