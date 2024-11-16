@@ -139,11 +139,23 @@ public class SlimeAI : MonoBehaviour
                 //Debug.Log("Take Damage");
                 break;
             
+
             
           //  case SlimeState.Chase:
 
 
           break;
+
+            case SlimeState.Chase:
+                agent.isStopped = false;
+                
+                agent.updateRotation = true;
+                agent.SetDestination(player.position);
+                SetFace(faces.WalkFace);
+                animator.SetFloat("Speed", agent.velocity.magnitude);
+                break;
+       
+
         }
 
     }
