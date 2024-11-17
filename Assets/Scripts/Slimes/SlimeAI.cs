@@ -6,6 +6,7 @@ public class SlimeAI : MonoBehaviour
     private Transform player;
 
     public Face faces;
+   
     public GameObject SmileBody;
     public SlimeState currentState; 
    
@@ -20,14 +21,21 @@ public class SlimeAI : MonoBehaviour
     private Material faceMaterial;
     private Vector3 originPos;
     
+  
+    
     public enum WalkType { Patroll ,ToOrigin, ToPlayer }
+    
+    
     private WalkType walkType;
+    
+    [SerializeField]private float speed;
     void Start()
     {
         originPos = transform.position;
         faceMaterial = SmileBody.GetComponent<Renderer>().materials[1];
         walkType = WalkType.Patroll;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        agent.speed = speed;
     }
     public void WalkToNextDestination()
     {

@@ -2,7 +2,10 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 public class SlimeSpawner : MonoBehaviour
 {
+    
     [SerializeField] private GameObject[] slimes;
+    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private Transform container;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -12,7 +15,7 @@ public class SlimeSpawner : MonoBehaviour
                 int randomIndex = Random.Range(10, 15);
                 for (int i = 0; i < randomIndex; i++)
                 {
-                    Instantiate(slime, transform.position, Quaternion.identity, transform);
+                    Instantiate(slime, spawnPoints[Random.Range(0,spawnPoints.Length)].position,Random.rotation,container);
                 }
             }
             GetComponent<BoxCollider>().size *= 5;
@@ -22,7 +25,7 @@ public class SlimeSpawner : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            foreach (Transform child in transform)
+            foreach (Transform child in container)
             {
                 Destroy(child.gameObject);
             }

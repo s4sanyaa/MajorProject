@@ -273,7 +273,7 @@ MonoBehaviour:
   agent: {fileID: 2586790339078847794}
   waypoints: []
   damType: 0
-  speed: 5
+  speed: 1
 --- !u!114 &6446138501379060641
 MonoBehaviour:
   m_ObjectHideFlags: 0
