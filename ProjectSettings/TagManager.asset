@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - CinemachineTarget
+  - FxTemporaire
+  - Food
+  - Resource
   layers:
   - Default
   - TransparentFX

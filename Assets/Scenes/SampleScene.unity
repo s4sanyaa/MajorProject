@@ -380,6 +380,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+--- !u!1001 &1152472994
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515551234262530024, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293819795828950833, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      propertyPath: m_Name
+      value: Slime_01_King
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5293819795828950833, guid: 806894741b0d29c45b3180908895534f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1152472996}
+  m_SourcePrefab: {fileID: 100100000, guid: 806894741b0d29c45b3180908895534f, type: 3}
+--- !u!1 &1152472995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5293819795828950833, guid: 806894741b0d29c45b3180908895534f, type: 3}
+  m_PrefabInstance: {fileID: 1152472994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1152472996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152472995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e578d581013d29d4e8b881fb70b1710e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefType: Fruit
+  favFood: Orange
+  resource: {fileID: 5482513602628254812, guid: 7b3ad6441df46c24c86738a1883cbc17, type: 3}
 --- !u!1001 &1202542768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -723,7 +803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1930407896
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -795,3 +875,4 @@ SceneRoots:
   - {fileID: 1398766998}
   - {fileID: 1830540649}
   - {fileID: 1930407898}
+  - {fileID: 1152472994}
