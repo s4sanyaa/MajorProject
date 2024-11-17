@@ -1,6 +1,3 @@
-
-
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 public enum SlimeState { Idle,Walk,Jump,Attack,Damage, Chase}
@@ -22,10 +19,9 @@ public class SlimeAI : MonoBehaviour
     private bool move;
     private Material faceMaterial;
     private Vector3 originPos;
-
+    
     public enum WalkType { Patroll ,ToOrigin, ToPlayer }
     private WalkType walkType;
-
     void Start()
     {
         originPos = transform.position;
@@ -41,24 +37,20 @@ public class SlimeAI : MonoBehaviour
         SetFace(faces.WalkFace);
     }
     public void CancelGoNextDestination() =>CancelInvoke(nameof(WalkToNextDestination));
-
     void SetFace(Texture tex)
     {
         faceMaterial.SetTexture("_MainTex", tex);
     }
     void Update()
     {
-        
-
         switch (currentState)
         {
             case SlimeState.Idle:
-                
                 // if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
                 // StopAgent();
                 // SetFace(faces.Idleface);
-                agent.isStopped = false;
-                agent.updateRotation = true;
+                //agent.isStopped = false;
+                //agent.updateRotation = true;
                 if (agent.remainingDistance <= agent.stoppingDistance)
                 {
                     if (Random.Range(0.0f, 100.0f) < 0.1f)
@@ -66,19 +58,15 @@ public class SlimeAI : MonoBehaviour
                         agent.SetDestination(new Vector3(transform.position.x + Random.Range(-5f, 5f), 0,
                             transform.position.z + Random.Range(-5f, 5f)));
                     }
-                    
                 }
                 SetFace(agent.velocity == Vector3.zero ? faces.Idleface : faces.WalkFace);
                 animator.SetFloat("Speed",agent.velocity.magnitude);
                 break;
 
             case SlimeState.Walk:
-
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk")) return;
-
                 agent.isStopped = false;
                 agent.updateRotation = true;
-
                 if (walkType == WalkType.ToOrigin)
                 {
                     agent.SetDestination(originPos);
@@ -99,15 +87,12 @@ public class SlimeAI : MonoBehaviour
                 //Patroll
                 else
                 {
-                    if (waypoints[0] == null) return;
-                   
+                    if (!waypoints[0]) return;
                      agent.SetDestination(waypoints[m_CurrentWaypointIndex].position);
-
                     // agent reaches the destination
                     if (agent.remainingDistance < agent.stoppingDistance)
                     {
                         currentState = SlimeState.Idle;
-
                         //wait 2s before go to next destionation
                         Invoke(nameof(WalkToNextDestination), 2f);
                     }
@@ -115,71 +100,46 @@ public class SlimeAI : MonoBehaviour
                 }
                 // set Speed parameter synchronized with agent root motion moverment
                 animator.SetFloat("Speed", agent.velocity.magnitude);
-                
-
                 break;
 
             case SlimeState.Jump:
-
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump")) return;
-
                 StopAgent();
                 SetFace(faces.jumpFace);
                 animator.SetTrigger("Jump");
-
                 //Debug.Log("Jumping");
                 break;
 
             case SlimeState.Attack:
-
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
                 StopAgent();
                 SetFace(faces.attackFace);
                 animator.SetTrigger("Attack");
-
                // Debug.Log("Attacking");
-
                 break;
+            
             case SlimeState.Damage:
-
                // Do nothing when animtion is playing
                if(animator.GetCurrentAnimatorStateInfo(0).IsName("Damage0")
                     || animator.GetCurrentAnimatorStateInfo(0).IsName("Damage1")
                     || animator.GetCurrentAnimatorStateInfo(0).IsName("Damage2") ) return;
-
                 StopAgent();
                 animator.SetTrigger("Damage");
                 animator.SetInteger("DamageType", damType);
                 SetFace(faces.damageFace);
-
                 //Debug.Log("Take Damage");
                 break;
             
-
-            
-          //  case SlimeState.Chase:
-
-
-          break;
-
             case SlimeState.Chase:
-                agent.isStopped = false;
-                
-                agent.updateRotation = true;
+                //agent.isStopped = false;
+                //agent.updateRotation = true;
                 agent.SetDestination(player.position);
-               // SetFace(faces.WalkFace);
                 SetFace(agent.velocity == Vector3.zero ? faces.Idleface : faces.WalkFace);
                 animator.SetFloat("Speed", agent.velocity.magnitude);
                 break;
-            
-           
-       
-
         }
 
     }
-
-
     private void StopAgent()
     {
         agent.isStopped = true;
@@ -189,7 +149,6 @@ public class SlimeAI : MonoBehaviour
     // Animation Event
     public void AlertObservers(string message)
     {
-      
         if (message.Equals("AnimationDamageEnded"))
         {
             // When Animation ended check distance between current position and first position 
@@ -205,18 +164,15 @@ public class SlimeAI : MonoBehaviour
 
             //Debug.Log("DamageAnimationEnded");
         }
-
         if (message.Equals("AnimationAttackEnded"))
         {
             currentState = SlimeState.Idle;           
         }
-
         if (message.Equals("AnimationJumpEnded"))
         {
             currentState = SlimeState.Idle;
         }
     }
-
     void OnAnimatorMove()
     {
         // apply root motion to AI
@@ -225,4 +181,4 @@ public class SlimeAI : MonoBehaviour
         transform.position = position;
         agent.nextPosition = transform.position;
     }
-    }
+}

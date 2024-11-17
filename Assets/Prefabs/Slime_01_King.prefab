@@ -273,6 +273,7 @@ MonoBehaviour:
   agent: {fileID: 2586790339078847794}
   waypoints: []
   damType: 0
+  speed: 5
 --- !u!114 &6446138501379060641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,8 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd63866d803ed148b9aec63157bc0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSlime: {fileID: 5293819795828950833}
   chaseDistance: 5
+  mainSlime: {fileID: 5293819795828950833}
 --- !u!1 &5970026841243909527
 GameObject:
   m_ObjectHideFlags: 0
