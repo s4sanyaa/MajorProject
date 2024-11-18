@@ -43,18 +43,18 @@
                 },
                 {
                     "name": "Vacuum",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "771986b9-dd5c-4d16-b8f9-85eaefc19e0f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
                     "name": "Shoot",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "8c738c02-1f58-410f-a41e-34ad3cb9366b",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false

@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class Produce : MonoBehaviour
 {
     [SerializeField] private string prefType, favFood;
     [SerializeField] private GameObject resource;
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag("Food"))
@@ -18,12 +13,9 @@ public class Produce : MonoBehaviour
                 if (other.gameObject.GetComponent<Food>().name == favFood)
                 {
                     Instantiate(resource, transform.position, transform.rotation);
-                    
                 }
-                
             }
             Destroy(other.gameObject);
         }
-        
     }
 }
