@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -74,7 +75,10 @@ namespace StarterAssets
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
-		
+
+		private bool canShoot;
+
+		[SerializeField] private GameObject objToShoot;
 		private bool IsCurrentDeviceMouse
 		{
 			get
@@ -109,6 +113,7 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			canShoot = true;
 		}
 
 		private void Update()
@@ -116,6 +121,24 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Shoot();
+		}
+
+		private void Shoot()
+		{
+			if (_input.shoot && canShoot)
+			{
+				Instantiate(objToShoot, transform.position + transform.forward + Vector3.up, Quaternion.identity)
+					.GetComponent<Rigidbody>().AddForce(20 * transform.forward,ForceMode.Impulse);
+				canShoot = false;
+				StartCoroutine(ResetShooting());
+			}
+		}
+
+		IEnumerator ResetShooting()
+		{
+			yield return new WaitForSeconds(0.5f);
+			canShoot = true;
 		}
 		private void LateUpdate()
 		{

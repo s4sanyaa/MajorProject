@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.0,"g":1.0,"b":0.25,"a":1.0},"time":0.0},{"color":{"r":0.7990875244140625,"g":1.0,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.7845553159713745,"g":0.6884220242500305,"b":0.955974817276001,"a":1.0},"time":0.0},{"color":{"r":0.8838883638381958,"g":0.8442505598068237,"b":0.9622641801834106,"a":1.0},"time":0.9960784316062927}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -42,7 +42,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: 00ff40ff03ff3fff06ff3eff0aff3dff0dff3cff10ff3bff13ff3aff17ff39ff1aff38ff1dff37ff20ff36ff24ff35ff27ff34ff2aff33ff2dff32ff31ff31ff34ff30ff37ff2fff3aff2eff3dff2dff41ff2cff44ff2aff47ff29ff4aff28ff4eff27ff51ff26ff54ff25ff57ff24ff5bff23ff5eff22ff61ff21ff64ff20ff68ff1fff6bff1eff6eff1dff71ff1cff74ff1bff78ff1aff7bff19ff7eff18ff81ff17ff85ff16ff88ff15ff8bff14ff8eff13ff92ff12ff95ff11ff98ff10ff9bff0fff9eff0effa2ff0dffa5ff0cffa8ff0bffabff0affafff09ffb2ff08ffb5ff07ffb8ff06ffbcff05ffbfff04ffc2ff03ffc5ff02ffc9ff01ffccff00ff
+  _typelessdata: c8b0f4ffc8b0f4ffc9b1f4ffc9b1f4ffcab2f4ffcab3f4ffcab3f4ffcbb4f4ffcbb5f4ffccb5f4ffccb6f4ffcdb7f4ffcdb7f4ffcdb8f4ffceb8f4ffceb9f4ffcfbaf4ffcfbaf4ffcfbbf4ffd0bcf4ffd0bcf4ffd1bdf4ffd1bdf4ffd1bef4ffd2bff4ffd2bff4ffd3c0f4ffd3c1f4ffd3c1f4ffd4c2f5ffd4c3f5ffd5c3f5ffd5c4f5ffd5c4f5ffd6c5f5ffd6c6f5ffd7c6f5ffd7c7f5ffd7c8f5ffd8c8f5ffd8c9f5ffd9caf5ffd9caf5ffd9cbf5ffdacbf5ffdaccf5ffdbcdf5ffdbcdf5ffdbcef5ffdccff5ffdccff5ffddd0f5ffddd0f5ffddd1f5ffded2f5ffded2f5ffdfd3f5ffdfd4f5ffdfd4f5ffe0d5f5ffe0d6f5ffe1d6f5ffe1d7f5ffe1d7f5ff
   m_StreamData:
     serializedVersion: 2
     offset: 0
@@ -55,7 +55,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 16_Vertical_1
+  m_Name: purpleVertical
   m_Shader: {fileID: 4800000, guid: 6eb86e4931b506a408fd1477edec61ea, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
