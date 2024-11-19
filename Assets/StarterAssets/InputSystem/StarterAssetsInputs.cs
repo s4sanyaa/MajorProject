@@ -12,6 +12,7 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool interact;
 
 		public bool shoot;
 		public bool vacuum;
@@ -52,6 +53,11 @@ namespace StarterAssets
 		{
 			//SprintInput(value.isPressed);
 			vacuum = value.isPressed;
+		}
+
+		public void OnInteract(InputValue value)
+		{
+			interact = value.isPressed;
 		}
 #endif
 		

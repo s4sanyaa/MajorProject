@@ -65,6 +65,8 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+		
+		
 
 	
 #if ENABLE_INPUT_SYSTEM
@@ -115,15 +117,30 @@ namespace StarterAssets
 			_fallTimeoutDelta = FallTimeout;
 			canShoot = true;
 		}
-
 		private void Update()
 		{
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
 			Shoot();
+			Interact();
 		}
-
+		private void Interact()
+		{
+			if (!_input.interact) return;
+            Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, 1, LayerMask.GetMask("Note"));
+            foreach (Collider target in targetsInRadius)
+            {
+                Transform targetTransform = target.transform;
+                Vector3 dirToTarget = (targetTransform.position - transform.position).normalized;
+                if (Vector3.Angle(transform.forward, dirToTarget) < 45)
+                {
+                    float distToTarget = Vector3.Distance(transform.position, targetTransform.position);
+                    if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, LayerMask.GetMask("Ground")))
+	                    target.gameObject.GetComponent<Note>().ReadNote();
+                }
+            }
+		}
 		private void Shoot()
 		{
 			if (_input.shoot && canShoot)
@@ -134,7 +151,6 @@ namespace StarterAssets
 				StartCoroutine(ResetShooting());
 			}
 		}
-
 		IEnumerator ResetShooting()
 		{
 			yield return new WaitForSeconds(0.5f);
