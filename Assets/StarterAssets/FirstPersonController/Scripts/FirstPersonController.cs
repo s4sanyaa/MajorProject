@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -123,6 +124,7 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 			Shoot();
+			Vacuum();
 			Interact();
 		}
 		private void Interact()
@@ -141,9 +143,26 @@ namespace StarterAssets
                 }
             }
 		}
+		
+		private void Vacuum()
+		{
+			if (!_input.vacuum) return;
+			Collider[] targetsInRadius = Physics.OverlapSphere(transform.position, 2, LayerMask.GetMask("Pickable"));
+			foreach (Collider target in targetsInRadius)
+			{
+				Transform targetTransform = target.transform;
+				Vector3 dirToTarget = (targetTransform.position - transform.position).normalized;
+				if (Vector3.Angle(transform.forward, dirToTarget) < 45)
+				{
+					float distToTarget = Vector3.Distance(transform.position, targetTransform.position);
+					if (!Physics.Raycast(transform.position, dirToTarget, distToTarget, LayerMask.GetMask("Ground")))
+						GetComponent<Inventory>().AddItem(target.gameObject);
+				}
+			}
+		}
 		private void Shoot()
 		{
-			if (_input.shoot && canShoot)
+			if (_input.shoot && canShoot && GetComponent<Inventory>().RemoveItem())
 			{
 				Instantiate(objToShoot, transform.position + transform.forward + Vector3.up, Quaternion.identity)
 					.GetComponent<Rigidbody>().AddForce(20 * transform.forward,ForceMode.Impulse);
