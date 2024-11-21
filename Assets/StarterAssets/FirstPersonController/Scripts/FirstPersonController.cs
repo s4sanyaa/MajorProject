@@ -164,10 +164,15 @@ namespace StarterAssets
 		{
 			if (_input.shoot && canShoot && GetComponent<Inventory>().RemoveItem())
 			{
-				Instantiate(objToShoot, transform.position + transform.forward + Vector3.up, Quaternion.identity)
-					.GetComponent<Rigidbody>().AddForce(20 * transform.forward,ForceMode.Impulse);
-				canShoot = false;
+				GameObject obj = Instantiate(GetComponent<Inventory>().item, transform.position + transform.forward + Vector3.up,
+					Quaternion.identity);
+
+				obj.SetActive(true);
+				obj.GetComponent<Rigidbody>().AddForce(20 * transform.forward,ForceMode.Impulse);
+					canShoot = false;
+					Destroy(GetComponent<Inventory>().item);
 				StartCoroutine(ResetShooting());
+				
 			}
 		}
 		IEnumerator ResetShooting()
