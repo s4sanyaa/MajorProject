@@ -18,17 +18,17 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 2
-    second: {fileID: 2800000, guid: ec7830ac95073d648a23ce8f9254eca0, type: 3}
+    second: {fileID: 2800000, guid: e0157e4f9219ade44809b3e8445db96f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 9 alpha
-    second: {fileID: 2800000, guid: 8fb75539f589f584ba95db8cf967f74e, type: 3}
+    second: {fileID: 2800000, guid: 9fee78deb7675c2498fac2475a1cd1e7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Tree_D_BaseColor1
-    second: {fileID: 2800000, guid: 23072537ad7eb0d4982764a6d0a1d9c8, type: 3}
+    second: {fileID: 2800000, guid: e492a79a6f5406f43bd71a544b0eb0c4, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
