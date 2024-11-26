@@ -260,7 +260,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.5137255191802979,"g":0.48235297203063967,"b":0.7882353663444519,"a":1.0},"time":0.0},{"color":{"r":0.6627451181411743,"g":0.5882353186607361,"b":0.9647059440612793,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":1.0,"g":0.847058892250061,"b":0.7686275243759155,"a":1.0},"time":0.0},{"color":{"r":0.9647058844566345,"g":0.5882353186607361,"b":0.7175019979476929,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -296,7 +296,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: 837bc9ff847bcaff847ccaff857ccbff857dccff867dcdff877ecdff877eceff887ecfff887fcfff897fd0ff8a80d1ff8a80d2ff8b81d2ff8b81d3ff8c81d4ff8d82d4ff8d82d5ff8e83d6ff8e83d7ff8f84d7ff9084d8ff9084d9ff9185d9ff9185daff9286dbff9386dcff9387dcff9487ddff9487deff9588deff9688dfff9689e0ff9789e1ff988ae1ff988ae2ff998ae3ff998be3ff9a8be4ff9b8ce5ff9b8ce6ff9c8de6ff9c8de7ff9d8de8ff9e8ee8ff9e8ee9ff9f8feaff9f8febffa090ebffa190ecffa190edffa291edffa291eeffa392efffa492f0ffa493f0ffa593f1ffa593f2ffa694f2ffa794f3ffa795f4ffa895f5ffa896f5ffa996f6ff
+  _typelessdata: ffd8c4ffffd7c4ffffd6c4ffffd5c3fffed4c3fffed3c3fffed2c3fffed1c3fffed0c2fffecfc2fffecec2fffdccc2fffdcbc2fffdcac1fffdc9c1fffdc8c1fffdc7c1fffdc6c0fffcc5c0fffcc4c0fffcc3c0fffcc2c0fffcc1bffffcc0bffffcbfbffffbbebffffbbdbffffbbcbefffbbbbefffbbabefffbb9befffbb8befffab6bdfffab5bdfffab4bdfffab3bdfffab2bdfffab1bcfffab0bcfff9afbcfff9aebcfff9adbcfff9acbbfff9abbbfff9aabbfff9a9bbfff8a8bafff8a7bafff8a6bafff8a5bafff8a4bafff8a3b9fff8a2b9fff7a0b9fff79fb9fff79eb9fff79db8fff79cb8fff79bb8fff79ab8fff699b8fff698b7fff697b7fff696b7ff
   m_StreamData:
     serializedVersion: 2
     offset: 0

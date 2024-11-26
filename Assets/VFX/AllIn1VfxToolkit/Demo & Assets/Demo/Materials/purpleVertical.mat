@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.7845553159713745,"g":0.6884220242500305,"b":0.955974817276001,"a":1.0},"time":0.0},{"color":{"r":0.8838883638381958,"g":0.8442505598068237,"b":0.9622641801834106,"a":1.0},"time":0.9960784316062927}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.95686274766922,"g":0.5568627715110779,"b":0.6484671831130981,"a":1.0},"time":0.0},{"color":{"r":0.9371068477630615,"g":0.6336425542831421,"b":0.3388906717300415,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -42,7 +42,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: c8b0f4ffc8b0f4ffc9b1f4ffc9b1f4ffcab2f4ffcab3f4ffcab3f4ffcbb4f4ffcbb5f4ffccb5f4ffccb6f4ffcdb7f4ffcdb7f4ffcdb8f4ffceb8f4ffceb9f4ffcfbaf4ffcfbaf4ffcfbbf4ffd0bcf4ffd0bcf4ffd1bdf4ffd1bdf4ffd1bef4ffd2bff4ffd2bff4ffd3c0f4ffd3c1f4ffd3c1f4ffd4c2f5ffd4c3f5ffd5c3f5ffd5c4f5ffd5c4f5ffd6c5f5ffd6c6f5ffd7c6f5ffd7c7f5ffd7c8f5ffd8c8f5ffd8c9f5ffd9caf5ffd9caf5ffd9cbf5ffdacbf5ffdaccf5ffdbcdf5ffdbcdf5ffdbcef5ffdccff5ffdccff5ffddd0f5ffddd0f5ffddd1f5ffded2f5ffded2f5ffdfd3f5ffdfd4f5ffdfd4f5ffe0d5f5ffe0d6f5ffe1d6f5ffe1d7f5ffe1d7f5ff
+  _typelessdata: f48ea5fff48ea4fff48fa3fff48fa2fff48fa0fff4909ffff4909efff3909dfff3909bfff3919afff39199fff39198fff39296fff39295fff39294fff39393fff39391fff39390fff3948ffff2948efff2948cfff2958bfff2958afff29589fff29587fff29686fff29685fff29684fff29782fff29781fff29780fff2987ffff1987dfff1987cfff1997bfff1997afff19978fff19977fff19a76fff19a74fff19a73fff19b72fff19b71fff19b6ffff09c6efff09c6dfff09c6cfff09d6afff09d69fff09d68fff09e67fff09e65fff09e64fff09e63fff09f62fff09f60fff09f5fffefa05effefa05dffefa05bffefa15affefa159ffefa158ffefa256ff
   m_StreamData:
     serializedVersion: 2
     offset: 0

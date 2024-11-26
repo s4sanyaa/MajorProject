@@ -6,7 +6,7 @@ Texture2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.6313725709915161,"g":0.572549045085907,"b":0.9294118285179138,"a":1.0},"time":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
+  m_Name: z_ColorRampTexGradientTex{"mode":0,"colorKeys":[{"color":{"r":0.929411768913269,"g":0.572549045085907,"b":0.5860264897346497,"a":1.0},"time":0.0},{"color":{"r":0.9874213337898254,"g":0.7158248424530029,"b":0.5309717059135437,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":1.0}]}
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
@@ -42,7 +42,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
   image data: 256
-  _typelessdata: a192edffa294edffa495eeffa597eeffa799eeffa89beeffaa9cefffab9eefffada0efffaea2f0ffb0a3f0ffb1a5f0ffb3a7f0ffb4a8f1ffb6aaf1ffb7acf1ffb9aef2ffbaaff2ffbcb1f2ffbdb3f2ffbfb5f3ffc0b6f3ffc2b8f3ffc3baf4ffc5bcf4ffc6bdf4ffc8bff4ffc9c1f5ffcbc2f5ffccc4f5ffcec6f6ffcfc8f6ffd1c9f6ffd2cbf6ffd4cdf7ffd5cff7ffd7d0f7ffd8d2f8ffdad4f8ffdbd5f8ffddd7f8ffded9f9ffe0dbf9ffe1dcf9ffe3defaffe4e0faffe6e2faffe7e3faffe9e5fbffeae7fbffece9fbffedeafcffefecfcfff0eefcfff2effcfff3f1fdfff5f3fdfff6f5fdfff8f6fefff9f8fefffbfafefffcfcfefffefdffffffffffff
+  _typelessdata: ed9295ffed9395ffed9395ffee9495ffee9495ffee9594ffee9594ffef9694ffef9794ffef9793ffef9893fff09893fff09993fff09a93fff09a92fff19b92fff19b92fff19c92fff19c91fff19d91fff29e91fff29e91fff29f91fff29f90fff3a090fff3a090fff3a190fff3a28ffff4a28ffff4a38ffff4a38ffff4a48ffff5a58efff5a58efff5a68efff5a68efff5a78dfff6a78dfff6a88dfff6a98dfff6a98dfff7aa8cfff7aa8cfff7ab8cfff7ac8cfff8ac8bfff8ad8bfff8ad8bfff8ae8bfff9ae8bfff9af8afff9b08afff9b08afff9b18afffab189fffab289fffab289fffab389fffbb489fffbb488fffbb588fffbb588fffcb688fffcb787ff
   m_StreamData:
     serializedVersion: 2
     offset: 0
